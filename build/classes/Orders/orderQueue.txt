@@ -1,0 +1,2 @@
+Order: {Pizza=0, Burger and Fries=0, Beer=1} 10:07:46.804
+Order: {Burger and Fries=1} 10:08:43.504
