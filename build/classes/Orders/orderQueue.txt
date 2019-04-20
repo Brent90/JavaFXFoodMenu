@@ -1,2 +1,19 @@
 Order: {Pizza=0, Burger and Fries=0, Beer=1} 10:07:46.804
 Order: {Burger and Fries=1} 10:08:43.504
+Order: {Pizza=2} 10:10:08.391
+Order: {} 10:28:15.806
+Order: {} 10:31:23.207
+Order: {} 10:32:20.561
+Order: {} 10:33:02.358
+Order: {Pizza=2, Burger and Fries=2} 11:01:42.099
+Order: {Pizza=2, Burger and Fries=2} 11:08:09.818
+Order: {Pizza=0, Burger and Fries=0} 11:09:47.001
+Order: {Beer=0} 11:13:33.762
+Order: {Burger and Fries=0} 11:13:59.360
+Order: {Burger and Fries=2, Beer=1} 11:14:33.499
+Order: {Pizza=1} 11:50:59.941
+Order: {Pizza=1, Burger and Fries=3} 11:51:32.843
+Order: {Burger and Fries=4} 12:00:35.244
+Order: {Pizza=2, Burger and Fries=2, Beer=1} 12:26:24.801
+Order: {Pizza=3, Burger and Fries=0} 12:52:01.536
+Order: {Burger and Fries=2} 13:09:49.773

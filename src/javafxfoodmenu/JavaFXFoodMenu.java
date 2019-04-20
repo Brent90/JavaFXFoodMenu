@@ -6,20 +6,20 @@
 package javafxfoodmenu;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
  * @author slinger
  */
 public class JavaFXFoodMenu extends Application {
+    
+    private double xOffset = 0;
+    private double yOffset = 0;
 
     @Override
     public void start(Stage primaryStage) {
@@ -27,8 +27,12 @@ public class JavaFXFoodMenu extends Application {
             // Read file fxml and draw interface.
             Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
             root.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-            primaryStage.setTitle("ComboBox");
             primaryStage.setScene(new Scene(root));
+            
+            //remove title bar
+            primaryStage.initStyle(StageStyle.TRANSPARENT);
+           
+            
             primaryStage.show();
 
             //  dbConnect();
