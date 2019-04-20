@@ -17,3 +17,4 @@ Order: {Burger and Fries=4} 12:00:35.244
 Order: {Pizza=2, Burger and Fries=2, Beer=1} 12:26:24.801
 Order: {Pizza=3, Burger and Fries=0} 12:52:01.536
 Order: {Burger and Fries=2} 13:09:49.773
+Order: {Burger and Fries=0, Beer=1} 14:28:52.503

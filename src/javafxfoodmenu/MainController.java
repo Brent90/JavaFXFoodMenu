@@ -20,6 +20,8 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
@@ -43,6 +45,12 @@ public class MainController implements Initializable {
 
     private final SubmitOrder orderToSubmit = new SubmitOrder();
     private final Orders order = new Orders();
+
+    //picutre variables
+    @FXML
+    private ImageView imageView;
+    private int positionCount = 0;
+    public String[] pictures = {"/Pictures/burger.jpg", "/Pictures/pizza.jpg", "/Pictures/beer.jpg"};
 
     /**
      * Initializes the controller class.
@@ -117,6 +125,33 @@ public class MainController implements Initializable {
     @FXML
     private void closeMenu(MouseEvent event) {
         System.exit(0);
+    }
+
+    //picture code
+    @FXML
+    public void nextPicture() {
+        if (positionCount == pictures.length - 1) {
+            positionCount = 0;
+        } else {
+            positionCount++;
+        }
+
+        Image im = new Image(pictures[positionCount]);
+        imageView.setImage(im);
+
+    }
+
+    @FXML
+    public void previousPicture() {
+        positionCount--;
+
+        if (positionCount < 0) {
+            positionCount = pictures.length - 1;
+        }
+
+        Image im = new Image(pictures[positionCount]);
+        imageView.setImage(im);
+
     }
 
 }
