@@ -109,7 +109,8 @@ public class MainController implements Initializable {
         // dialog window for confirmation
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Order Conformation");
-        alert.setContentText("Order amount: $" + order.getOrderAmount() + ". Submit order?");
+        String amount = String.format("%.2f", order.getOrderAmount());
+        alert.setContentText("Order amount: $" + amount + ". Submit order?");
         Optional<ButtonType> result = alert.showAndWait();
 
         if (result.get() == ButtonType.OK) {
@@ -124,7 +125,7 @@ public class MainController implements Initializable {
     @FXML
     private void updateTotal(ActionEvent event) {
         String amount = String.format("%.2f", order.getOrderAmount());
-        total.setText("Total $" + amount);
+        total.setText("Total: $" + amount);
 
     }
 
