@@ -33,6 +33,10 @@ public class Orders {
                 totalAmount += 12.99 * orders.get(s);
             } else if (s.equals("Beer")) {
                 totalAmount += 3.99 * orders.get(s);
+            }else if(s.equals("Hot Wings")){
+                totalAmount += 5.99 * orders.get(s);
+            }else if(s.equals("Nachos")){
+                totalAmount += 7.99 * orders.get(s);
             }
         }
         

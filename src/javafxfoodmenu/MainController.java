@@ -39,6 +39,10 @@ public class MainController implements Initializable {
     @FXML
     private Spinner<Integer> pizzaSpinner;
     @FXML
+    private Spinner<Integer> hotwingSpinner;
+    @FXML
+    private Spinner<Integer> nachoSpinner;
+    @FXML
     private Label total;
     @FXML
     private Button addOrderBtn;
@@ -50,7 +54,13 @@ public class MainController implements Initializable {
     @FXML
     private ImageView imageView;
     private int positionCount = 0;
-    public String[] pictures = {"/Pictures/burger.jpg", "/Pictures/pizza.jpg", "/Pictures/beer.jpg"};
+    public String[] pictures = {"/Pictures/burger.jpg", "/Pictures/pizza.jpg", "/Pictures/nachos.jpg", "/Pictures/hotWings.jpg", "/Pictures/beer.jpg"};
+    @FXML
+    private AnchorPane body;
+    @FXML
+    private FontAwesomeIconView closeIcon;
+    @FXML
+    private Label menu;
 
     /**
      * Initializes the controller class.
@@ -58,13 +68,17 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        SpinnerValueFactory<Integer> spinner1 = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, 0);
-        SpinnerValueFactory<Integer> spinner2 = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, 0);
-        SpinnerValueFactory<Integer> spinner3 = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, 0);
+        SpinnerValueFactory<Integer> spinnerForBurger = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, 0);
+        SpinnerValueFactory<Integer> spinnerForPizza = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, 0);
+        SpinnerValueFactory<Integer> spinnerForWings = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, 0);
+        SpinnerValueFactory<Integer> spinnerForNachos = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, 0);
+        SpinnerValueFactory<Integer> spinnerForBeer = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, 0);
 
-        burgerSpinner.setValueFactory(spinner1);
-        pizzaSpinner.setValueFactory(spinner2);
-        beerSpinner.setValueFactory(spinner3);
+        burgerSpinner.setValueFactory(spinnerForBurger);
+        pizzaSpinner.setValueFactory(spinnerForPizza);
+        hotwingSpinner.setValueFactory(spinnerForWings);
+        nachoSpinner.setValueFactory(spinnerForNachos);
+        beerSpinner.setValueFactory(spinnerForBeer);
 
         burgerSpinner.valueProperty().addListener(c -> {
             buttonLogic();
@@ -73,6 +87,14 @@ public class MainController implements Initializable {
         pizzaSpinner.valueProperty().addListener(c -> {
             buttonLogic();
             order.addOrder("Pizza", pizzaSpinner.getValue());
+        });
+        hotwingSpinner.valueProperty().addListener(c -> {
+            buttonLogic();
+            order.addOrder("Hot Wings", hotwingSpinner.getValue());
+        });
+        nachoSpinner.valueProperty().addListener(c -> {
+            buttonLogic();
+            order.addOrder("Nachos", nachoSpinner.getValue());
         });
         beerSpinner.valueProperty().addListener(c -> {
             buttonLogic();
@@ -107,7 +129,8 @@ public class MainController implements Initializable {
     }
 
     public void buttonLogic() {
-        if (burgerSpinner.getValue() == 0 && pizzaSpinner.getValue() == 0 && beerSpinner.getValue() == 0) {
+        //if everthing is zero, disable the 'add order' button
+        if (burgerSpinner.getValue() == 0 && pizzaSpinner.getValue() == 0 && beerSpinner.getValue() == 0 && hotwingSpinner.getValue() == 0 && nachoSpinner.getValue() == 0) {
             addOrderBtn.setDisable(true);
         } else {
             addOrderBtn.setDisable(false);
@@ -127,7 +150,7 @@ public class MainController implements Initializable {
         System.exit(0);
     }
 
-    //picture code
+    //start of picture code
     @FXML
     public void nextPicture() {
         if (positionCount == pictures.length - 1) {
@@ -153,5 +176,6 @@ public class MainController implements Initializable {
         imageView.setImage(im);
 
     }
+    //end of picture code
 
 }
