@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package javafxfoodmenu;
 
+import Database.DAO;
 import Orders.Orders;
 import Orders.SubmitOrder;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
@@ -49,6 +46,7 @@ public class MainController implements Initializable {
 
     private final SubmitOrder orderToSubmit = new SubmitOrder();
     private final Orders order = new Orders();
+    private final DAO databaseOperations = new DAO();
 
     //picutre variables
     @FXML
@@ -114,7 +112,6 @@ public class MainController implements Initializable {
         Optional<ButtonType> result = alert.showAndWait();
 
         if (result.get() == ButtonType.OK) {
-            //submit orderToSubmit to text file 
             orderToSubmit.submitOrder(order);
             clearMenu();
         } else {
@@ -142,7 +139,10 @@ public class MainController implements Initializable {
         total.setText("Total $");
         burgerSpinner.getValueFactory().setValue(0);
         pizzaSpinner.getValueFactory().setValue(0);
+        hotwingSpinner.getValueFactory().setValue(0);
+        nachoSpinner.getValueFactory().setValue(0);
         beerSpinner.getValueFactory().setValue(0);
+        
 
     }
 

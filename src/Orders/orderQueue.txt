@@ -20,3 +20,8 @@ Order: {Burger and Fries=2} 13:09:49.773
 Order: {Burger and Fries=0, Beer=1} 14:28:52.503
 Order: {Nachos=1, Hot Wings=2, Beer=1} 15:22:00.305
 Order: {Nachos=1, Burger and Fries=2, Hot Wings=3, Beer=5} 15:58:55.501
+Order: {Pizza=1, Beer=4} 16:14:12.210
+Order: {Pizza=1, Burger and Fries=1} 18:27:09.109
+Order: {Nachos=1} 18:28:43.032
+Order: {Nachos=1} 18:31:08.997
+Order: {Hot Wings=1} 18:33:33.958

@@ -5,6 +5,8 @@
  */
 package javafxfoodmenu;
 
+import Database.DatabaseConnector;
+import java.sql.SQLException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,11 +20,12 @@ import javafx.stage.StageStyle;
  */
 public class JavaFXFoodMenu extends Application {
     
-    private double xOffset = 0;
-    private double yOffset = 0;
+    DatabaseConnector connector = new DatabaseConnector();
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws SQLException {
+        
+        
         try {
             // Read file fxml and draw interface.
             Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
